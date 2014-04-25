@@ -867,6 +867,14 @@ function liste_parti_oversigt_views_default_views() {
   $handler->display->display_options['fields']['field_vlnt_station']['settings'] = array(
     'link' => 1,
   );
+  /* Felt: Field collection item: Rolle */
+  $handler->display->display_options['fields']['field_post_role']['id'] = 'field_post_role';
+  $handler->display->display_options['fields']['field_post_role']['table'] = 'field_data_field_post_role';
+  $handler->display->display_options['fields']['field_post_role']['field'] = 'field_post_role';
+  $handler->display->display_options['fields']['field_post_role']['relationship'] = 'field_electioninfo_value';
+  $handler->display->display_options['fields']['field_post_role']['settings'] = array(
+    'link' => 0,
+  );
   /* Felt: Global: Tilpasset tekst */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -879,12 +887,6 @@ function liste_parti_oversigt_views_default_views() {
 </span>
 </div>';
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
-  /* Felt: Indhold: Label */
-  $handler->display->display_options['fields']['field_label']['id'] = 'field_label';
-  $handler->display->display_options['fields']['field_label']['table'] = 'field_data_field_label';
-  $handler->display->display_options['fields']['field_label']['field'] = 'field_label';
-  $handler->display->display_options['fields']['field_label']['label'] = '';
-  $handler->display->display_options['fields']['field_label']['element_label_colon'] = FALSE;
   /* Felt: Field collection item: Parti plads */
   $handler->display->display_options['fields']['field_post_party']['id'] = 'field_post_party';
   $handler->display->display_options['fields']['field_post_party']['table'] = 'field_data_field_post_party';
@@ -986,6 +988,7 @@ function liste_parti_oversigt_views_default_views() {
     t('Alle'),
     t('Partioversigt'),
     t('/ [entity_id_8]'),
+    t('Rolle'),
     t('<div>
 <h4>[title] ([entity_id_6] )</h4>
 <span calss="mobile">[entity_id_7] [entity_id_8]
