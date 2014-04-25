@@ -34,5 +34,8 @@ function valghalla_lists_permission(){
     'valghalla view no-email list' => array(
       'title'=> t('Se "Deltagere uden e-mail adresse" liste'),
     ),
+    'valghalla view parties-volunteers list' => array(
+      'title'=> t('Se "Alle partiets deltagere" liste'),
+    ),
   );
 }
