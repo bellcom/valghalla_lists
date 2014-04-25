@@ -25,11 +25,8 @@ function liste_frivillige_uden_email_views_default_views() {
   $handler->display->display_options['title'] = 'Deltagere der er registreret uden email';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'mere';
-  $handler->display->display_options['access']['type'] = 'role';
-  $handler->display->display_options['access']['role'] = array(
-    3 => '3',
-    8 => '8',
-  );
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['perm'] = 'valghalla view no-email list';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
@@ -143,7 +140,12 @@ Bemærk: Det kontrolleres ikke om det indtastede er en korrekt email-adresse.';
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $handler->display->display_options['path'] = 'valhalla_lists/frivillige-uden-email';
+  $handler->display->display_options['path'] = 'valghalla_lists/frivillige_uden_email';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Deltagere uden e-mail adresse';
+  $handler->display->display_options['menu']['description'] = 'Liste over deltagere der mangler e-mail adresse';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['context'] = 0;
   $translatables['frivillige_uden_email'] = array(
     t('Master'),
     t('Deltagere der er registreret uden email'),

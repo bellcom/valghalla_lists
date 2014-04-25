@@ -14,10 +14,33 @@ function liste_parti_oversigt_default_page_manager_pages() {
   $page->name = 'parti_oversigt';
   $page->task = 'page';
   $page->admin_title = 'Parti oversigt';
-  $page->admin_description = '';
-  $page->path = 'parti-oversigt';
-  $page->access = array();
-  $page->menu = array();
+  $page->admin_description = 'Liste over partiets deltageres pladser';
+  $page->path = 'valghalla_lists/party_list';
+  $page->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'perm',
+        'settings' => array(
+          'perm' => 'valghalla view party-overview list',
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+    'logic' => 'and',
+  );
+  $page->menu = array(
+    'type' => 'normal',
+    'title' => 'Partioversigt',
+    'name' => 'navigation',
+    'weight' => '0',
+    'parent' => array(
+      'type' => 'none',
+      'title' => '',
+      'name' => 'navigation',
+      'weight' => '0',
+    ),
+  );
   $page->arguments = array();
   $page->conf = array(
     'admin_paths' => FALSE,

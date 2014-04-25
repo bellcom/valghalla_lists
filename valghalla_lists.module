@@ -16,3 +16,23 @@ function valghalla_lists_menu(){
 
   return $items;
 }
+
+/**
+ * Implements hook_permission()
+ */
+function valghalla_lists_permission(){
+  return array(
+    'valghalla view messages list' => array(
+      'title'=> t('Se "Beskeder" liste'),
+    ),
+    'valghalla view no-reply list' => array(
+      'title'=> t('Se "Deltagere der endnu ikke har svaret" liste'),
+    ),
+    'valghalla view party-overview list' => array(
+      'title'=> t('Se "Parti oversigt" liste'),
+    ),
+    'valghalla view no-email list' => array(
+      'title'=> t('Se "Deltagere uden e-mail adresse" liste'),
+    ),
+  );
+}
